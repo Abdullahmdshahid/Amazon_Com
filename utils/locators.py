@@ -8,7 +8,7 @@ class HomePageLocator():
 
     # FACEBOOK BUTTON
 
-    FACEBOOK_BUTTON = (By.XPATH, '//*[@id="js--login-form"]/div[1]/div/button[1]')
+    PROFILE = (By.XPATH, '//span[@id="nav-link-accountList-nav-line-1"]')
 
     # GOOGLE BUTTON
 
@@ -42,8 +42,8 @@ class HomePageLocator():
 
     CREATE_PASSWORD = (By.ID, "pwd")
 
-    PROFILE = (By.XPATH, '//span[@class="user-name"]')
-    ACCOUNT = (By.XPATH, '//a[text()="My Account"]')
+    # PROFILE = (By.XPATH, '//span[@class="user-name"]')
+    ACCOUNT = (By.XPATH, '//a[@id="nav-link-accountList"]')
 
     BOOK_BUTTON = (By.XPATH, '//a[@href="/book?ref=nm"]')
     ELEC_BUTTON = (By.XPATH, '//a[@href="/electronics?ref=nm"]')
@@ -61,21 +61,25 @@ class HomePageLocator():
     WISH_LIST = (By.XPATH, '//a[text()="My Wishlist"]')
     REVIEWS = (By.XPATH, '//a[text()="My Rating Reviews"]')
     POINT = (By.XPATH, '//a[text()="My Points"]')
-    LOGOUT = (By.XPATH, '//a[@href="/logout"]')
+    LOGOUT = (By.XPATH, '//span[text()="Sign Out"]')
 
 
-class LoginPageLocator():
-    # USER NAME
+class LoginPageLocator(object):
+    # LOGIN EMAIL FIELD
 
-    USER_NAME = (By.XPATH, '//input[@id="j_username"]')
+    EMAIL_FIELD = (By.XPATH, '//input[@id="ap_email"]')
 
-    # LOGIN PASSWORD
+    # EMAIL PAGE BUTTON
 
-    LOGIN_PASSWORD = (By.XPATH, '//input[@id="j_password"]')
+    EMAIL_PAGE_BUTTON = (By.XPATH, '//input[@id="continue"]')
+
+    # LOGIN PASSWORD FIELD
+
+    PASSWORD_FIELD = (By.XPATH, '//input[@id="ap_password"]')
 
     # LOGIN BUTTON
 
-    LOGIN = (By.XPATH, '//*[@id="loginForm"]/button')
+    LOGIN = (By.XPATH, '//*[@id="signInSubmit"]')
 
     CREATE_NEW_ACCOUNT = (By.XPATH, '//a[@id="createAccountSubmit"]')
 

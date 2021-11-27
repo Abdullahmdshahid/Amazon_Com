@@ -14,3 +14,14 @@ class HomePage(BasePage):
     def click_login_button(self):
         button = self.chrome_webdriver.find_element(*self.locator.SIGN_IN_BUTTON)
         button.click()
+
+    def hover_profile(self):
+        super().hover(*self.locator.ACCOUNT)
+
+    def get_profile_name(self):
+        super().wait_element(*self.locator.PROFILE)
+        button = self.chrome_webdriver.find_element(*self.locator.PROFILE).text
+
+    def click_log_out(self):
+        button = self.chrome_webdriver.find_element(*self.locator.LOGOUT)
+        button.click()

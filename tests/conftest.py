@@ -10,5 +10,5 @@ def main(request):
     chrome_webdriver.maximize_window()
     # action = ActionChains(chrome_webdriver)
     request.cls.chrome_webdriver = chrome_webdriver
-    # yield
-    # chrome_webdriver.close()
+    yield
+    chrome_webdriver.close()

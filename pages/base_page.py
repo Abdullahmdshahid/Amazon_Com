@@ -8,7 +8,7 @@ from selenium.common.exceptions import TimeoutException
 
 class BasePage(object):
 
-    def __init__(self, chrome_webdriver, base_url='https://www.rokomari.com/'):
+    def __init__(self, chrome_webdriver, base_url='https://www.amazon.com/'):
         self.base_url = base_url
         self.chrome_webdriver = chrome_webdriver
         self.timeout = 30
