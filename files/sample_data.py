@@ -1,8 +1,18 @@
-class SampleData():
-    name = "test"
-    email = "mda.qups@gmail.com"
-    password = "37192864"
-    book_name = "physic"
+class CreateAccountData(object):
+    NAME = "test"
+    EMAIL = "your email"  # enter your email
+    PASSWORD = "your password"  # enter your password
 
-    new_name = "test1"
-    birth_date = "01/01/1995"
+
+class LoginData(object):
+    EMAIL = "your email"  # enter your email
+    PASSWORD = "your password"  # enter your password
+
+
+class SearchData(object):
+    TYPE_OF_ITEM = "Computers"
+    ITEM_NAME = "dell laptop"
+    FEATURED_BRANDS = "Dell"
+    MIN_PRICE = "50"
+    MAX_PRICE = "200"
+
