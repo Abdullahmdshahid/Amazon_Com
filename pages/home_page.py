@@ -1,8 +1,6 @@
-from selenium.webdriver import Keys
-
 from pages.base_page import BasePage
-from files.sample_data import SampleData
 from utils.locators import *
+from selenium.webdriver.common.keys import Keys
 
 
 class HomePage(BasePage):
@@ -20,8 +18,21 @@ class HomePage(BasePage):
 
     def get_profile_name(self):
         super().wait_element(*self.locator.PROFILE)
-        button = self.chrome_webdriver.find_element(*self.locator.PROFILE).text
+        text = self.chrome_webdriver.find_element(*self.locator.PROFILE).text
+        return text
 
     def click_log_out(self):
         button = self.chrome_webdriver.find_element(*self.locator.LOGOUT)
         button.click()
+
+    def select_search_item(self, type_of_item):
+        search_dropdown_box = self.find_elements(*self.locator.SEARCH_DROPDOWN_BOX)
+        for search_item in search_dropdown_box:
+            if search_item.text == type_of_item:
+                search_item.click()
+                break
+
+    def enter_search_item_name(self, item):
+        search_text_box = self.find_element(*self.locator.SEARCH_TEXT_BOX)
+        search_text_box.send_keys(item)
+        search_text_box.send_keys(Keys.ENTER)
