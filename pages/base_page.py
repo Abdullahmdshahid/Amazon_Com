@@ -8,23 +8,21 @@ from selenium.common.exceptions import TimeoutException
 
 class BasePage(object):
 
-    def __init__(self, chrome_webdriver, base_url='https://www.amazon.com/'):
-        self.base_url = base_url
+    def __init__(self, chrome_webdriver):
         self.chrome_webdriver = chrome_webdriver
         self.timeout = 30
 
     def find_element(self, *locator):
         return self.chrome_webdriver.find_element(*locator)
 
-    def open(self, url):
-        url = self.base_url + url
-        self.chrome_webdriver.get(url)
+    def find_elements(self, *locator):
+        return self.chrome_webdriver.find_elements(*locator)
 
     def get_title(self):
         return self.chrome_webdriver.title
 
-    # def get_url(self):
-    #     return self.chrome_webdriver.current_url
+    def get_url(self):
+        return self.chrome_webdriver.current_url
 
     def back_to_homepage(self):
         return self.chrome_webdriver.back()
