@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class HomePageLocator():
+class HomePageLocator(object):
     # SIGN IN BUTTON
 
     SIGN_IN_BUTTON = (By.XPATH, '//a[@id="nav-link-accountList"]')
@@ -45,7 +45,7 @@ class HomePageLocator():
     # PROFILE = (By.XPATH, '//span[@class="user-name"]')
     ACCOUNT = (By.XPATH, '//a[@id="nav-link-accountList"]')
 
-    BOOK_BUTTON = (By.XPATH, '//a[@href="/book?ref=nm"]')
+    TODAYS_DEALS_BUTTON = (By.XPATH, '//div[@id="nav-xshop"]/a[1]')
     ELEC_BUTTON = (By.XPATH, '//a[@href="/electronics?ref=nm"]')
     STAI_BUTTON = (By.XPATH, '//a[@href="/stationary?ref=nm"]')
     GIFT_BUTTON = (By.XPATH, '//a[@href="/giftfinder?ref=nm"]')
@@ -54,7 +54,8 @@ class HomePageLocator():
     BLOG_BUTTON = (By.XPATH, '//a[@href="https://blog.rokomari.com/?ref=nm"]')
     CHART_BUTTON = (By.XPATH, '//a[@class="cart-menu"]')
     NOTIFY_BUTTON = (By.XPATH, 'a[class*="notify"]')
-    SEARCH_BUTTON = (By.XPATH, '//input[@name="term"]')
+    SEARCH_DROPDOWN_BOX = (By.CSS_SELECTOR, 'select[class*="search-dropdown"] option')
+    SEARCH_TEXT_BOX = (By.ID, 'twotabsearchtextbox')
     ORDER = (By.XPATH, '//a[text()="My Orders"]')
     MY_LIST = (By.XPATH, '//a[text()="My List"]')
     CREATE_LIST = (By.XPATH, '//button[text()="Create New List"]')
@@ -82,9 +83,10 @@ class LoginPageLocator(object):
     LOGIN = (By.XPATH, '//*[@id="signInSubmit"]')
 
     CREATE_NEW_ACCOUNT = (By.XPATH, '//a[@id="createAccountSubmit"]')
+    APPROVE_TEXT = (By.XPATH, '//div[@class="a-box-inner"]/div[2]/span')
 
 
-class ChangeProfileLocator():
+class ChangeProfileLocator(object):
     CHANGE_PROFILE = (By.ID, 'js--edit-personal')
 
     CHANGE_NAME = (By.XPATH, '//input[@name="name"]')
@@ -110,3 +112,13 @@ class RegisterPageLocator(object):
 
 class LocationAlertBoxLocator(object):
     DONT_CHANGE_BUTTON = (By.XPATH, '//*[@id="nav-main"]/div[1]/div/div/div[3]/span[1]/span/input')
+
+
+class SearchPageLocators(object):
+    ALL_PRICE_LIST = (By.XPATH, '//span[contains(text(),"$")]/parent::span[@aria-hidden="true"]/span[2]')
+    FOUR_STAR_REVIEW_BUTTON = (By.XPATH, '//li[@id="p_72/1248879011"]/span/a')
+    FEATURED_BRANDS_TEXT = (By.XPATH, '//ul[@aria-labelledby="p_89-title"]/li/span/a/span')
+    FEATURED_BRANDS_CHECK_BOX = (By.XPATH, '//ul[@aria-labelledby="p_89-title"]/li/span/a')
+    MIN_PRICE_TEXT_BOX = (By.ID, "low-price")
+    MAX_PRICE_TEXT_BOX = (By.ID, "high-price")
+    GO_BUTTON = (By.XPATH, '//span[contains(text(), "Go")]/parent::span/input')
