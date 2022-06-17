@@ -44,3 +44,11 @@ class BasePage(object):
 
     def scroll_up(self):
         self.chrome_webdriver.execute_script("window.scrollTo(0,0)")
+
+    def scroll_down_by_pixel(self):
+        self.chrome_webdriver.execute_script("window.scrollBy(0,1000)")
+
+    def scroll_down_by_element(self, *locator):
+        element = self.chrome_webdriver.find_element(*locator)
+        self.chrome_webdriver.execute_script("arguments[0].scrollIntoView();", element)
+
