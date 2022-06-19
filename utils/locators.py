@@ -44,12 +44,12 @@ class HomePageLocator(object):
 
     # PROFILE = (By.XPATH, '//span[@class="user-name"]')
     ACCOUNT = (By.XPATH, '//a[@id="nav-link-accountList"]')
-
+    DONT_CHANGE_BUTTON = (By.XPATH, '//*[@id="nav-main"]/div[1]/div/div/div[3]/span[1]/span/input')
     TODAYS_DEALS_BUTTON = (By.XPATH, '//div[@id="nav-xshop"]/a[1]')
-    ELEC_BUTTON = (By.XPATH, '//a[@href="/electronics?ref=nm"]')
-    STAI_BUTTON = (By.XPATH, '//a[@href="/stationary?ref=nm"]')
-    GIFT_BUTTON = (By.XPATH, '//a[@href="/giftfinder?ref=nm"]')
-    CORPO_BUTTON = (By.XPATH, '//a[@href="/corporate?ref=nm"]')
+    CUSTOMER_SERVICE_BUTTON = (By.XPATH, '//div[@id="nav-xshop"]/a[2]')
+    REGISTRY_BUTTON = (By.XPATH, '//div[@id="nav-xshop"]/a[3]')
+    GIFT_CARD_BUTTON = (By.XPATH, '//div[@id="nav-xshop"]/a[4]')
+    SELL_BUTTON = (By.XPATH, '//div[@id="nav-xshop"]/a[5]')
     OFFER_BUTTON = (By.XPATH, '//a[@href="/offer?ref=nm"]')
     BLOG_BUTTON = (By.XPATH, '//a[@href="https://blog.rokomari.com/?ref=nm"]')
     CHART_BUTTON = (By.XPATH, '//a[@class="cart-menu"]')
@@ -110,10 +110,6 @@ class RegisterPageLocator(object):
     BUTTON = (By.XPATH, '//input[@id="continue"]')
 
 
-class LocationAlertBoxLocator(object):
-    DONT_CHANGE_BUTTON = (By.XPATH, '//*[@id="nav-main"]/div[1]/div/div/div[3]/span[1]/span/input')
-
-
 class SearchPageLocators(object):
     ALL_PRICE_LIST = (By.XPATH, '//span[contains(text(),"$")]/parent::span[@aria-hidden="true"]/span[2]')
     FOUR_STAR_REVIEW_BUTTON = (By.XPATH, '//li[@id="p_72/1248879011"]/span/a')
@@ -122,3 +118,10 @@ class SearchPageLocators(object):
     MIN_PRICE_TEXT_BOX = (By.ID, "low-price")
     MAX_PRICE_TEXT_BOX = (By.ID, "high-price")
     GO_BUTTON = (By.XPATH, '//span[contains(text(), "Go")]/parent::span/input')
+
+
+class TodaysDealPageLocators(object):
+    ALL_DEALS_LINK = (By.XPATH, '//span[@data-testid="grid-filter-AVAILABILITY"]/span/div[@class="a-row"]')
+    PRIME_PROGRAM_CHECK_BOXS = (By.XPATH, '//span[@data-testid="grid-filter-PRIME"]/span/div/div/label/input')
+    DEPARTMENTS_CHECK_BOXS = (By.XPATH, '//span[@data-testid="grid-filter-DEPARTMENTS"]/span/div/div/div/label/input')
+
