@@ -36,3 +36,11 @@ class HomePage(BasePage):
         search_text_box = self.find_element(*self.locator.SEARCH_TEXT_BOX)
         search_text_box.send_keys(item)
         search_text_box.send_keys(Keys.ENTER)
+
+    def click_location_not_change_button(self):
+        button = self.find_element(*self.locator.DONT_CHANGE_BUTTON)
+        button.click()
+
+    def click_todays_deal_button(self):
+        button = self.find_element(*self.locator.TODAYS_DEALS_BUTTON)
+        button.click()
